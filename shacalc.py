@@ -9,10 +9,10 @@ password (eg. my_password).
 
 import sys
 import crypt
-from PySide import QtGui
+from PySide.QtGui import *
 
 
-class MyApp(QtGui.QMainWindow):
+class MyApp(QMainWindow):
     """
     This class presents main application window
     """
@@ -22,22 +22,22 @@ class MyApp(QtGui.QMainWindow):
         # main window size, title and icon
         self.setMinimumSize(800, 150)
         self.setWindowTitle("Calculate a password hash in Linux")
-        self.setWindowIcon(QtGui.QIcon("lock.ico"))
+        self.setWindowIcon(QIcon("lock.ico"))
 
         # lines for entering data
-        self.saltLabel = QtGui.QLabel("Salt:")
-        self.saltLine = QtGui.QLineEdit()
+        self.saltLabel = QLabel("Salt:")
+        self.saltLine = QLineEdit()
         self.saltLine.setPlaceholderText("e.g. $6$xxxxxxxx")
-        self.passwordLabel = QtGui.QLabel("Password:")
-        self.passwordLine = QtGui.QLineEdit()
-        self.hashLabel = QtGui.QLabel("Hash")
-        self.hashSunkenLabel = QtGui.QLabel()
-        self.hashSunkenLabel.setFrameStyle(QtGui.QFrame.Box | QtGui.QFrame.Sunken)
-        self.resultButton = QtGui.QPushButton("&Calculate", self)
+        self.passwordLabel = QLabel("Password:")
+        self.passwordLine = QLineEdit()
+        self.hashLabel = QLabel("Hash")
+        self.hashSunkenLabel = QLabel()
+        self.hashSunkenLabel.setFrameStyle(QFrame.Box | QFrame.Sunken)
+        self.resultButton = QPushButton("&Calculate", self)
         self.resultButton.setMaximumSize(100, 50)
 
         # set layout
-        grid = QtGui.QGridLayout()
+        grid = QGridLayout()
         grid.addWidget(self.passwordLabel, 0, 0)
         grid.addWidget(self.passwordLine, 0, 1)
         grid.addWidget(self.saltLabel, 1, 0)
@@ -47,7 +47,7 @@ class MyApp(QtGui.QMainWindow):
         grid.addWidget(self.resultButton, 2, 1)
 
         #  set central widget in QMainWindow
-        widget = QtGui.QWidget()
+        widget = QWidget()
         widget.setLayout(grid)
         self.setCentralWidget(widget)
 
@@ -68,7 +68,7 @@ class MyApp(QtGui.QMainWindow):
 
 
 def main():
-    app = QtGui.QApplication(sys.argv)
+    app = QApplication(sys.argv)
     instance = MyApp()
     instance.show()
     sys.exit(app.exec_())
