@@ -9,7 +9,7 @@ password (eg. my_password).
 
 import sys
 import crypt
-from PySide.QtGui import *
+from PySide.QtGui import QMainWindow, QLabel, QLineEdit, QPushButton, QWidget
 
 
 class MyApp(QMainWindow):
