@@ -9,7 +9,8 @@ password (eg. my_password).
 
 import sys
 import crypt
-from PySide.QtGui import QMainWindow, QLabel, QLineEdit, QPushButton, QWidget
+from PySide.QtGui import QMainWindow, QLabel, QLineEdit, QPushButton, \
+        QWidget, QApplication, QIcon, QFrame, QGridLayout
 
 
 class MyApp(QMainWindow):
@@ -22,7 +23,7 @@ class MyApp(QMainWindow):
         # main window size, title and icon
         self.setMinimumSize(800, 150)
         self.setWindowTitle("Calculate a password hash in Linux")
-        self.setWindowIcon(QIcon("lock.ico"))
+        self.setWindowIcon(QIcon("shacalc.ico"))
 
         # lines for entering data
         self.saltLabel = QLabel("Salt:")
